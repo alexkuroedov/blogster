@@ -1,0 +1,16 @@
+{{#if error}}
+    <div class="card red lighten-4 z-index-2 mgt-15 pd-5 error">
+        <div class="container center-align">
+            {{error}}
+        </div>
+    </div>
+{{/if}}
+
+{{#each errors}}
+    <div class="card red lighten-4 z-index-2 mgt-15 pd-5 errors">
+        <div class="container center-align">
+            {{text}}
+        </div>
+    </div>
+{{/each}}
+

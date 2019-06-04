@@ -1,0 +1,72 @@
+<nav>
+    <div class="container">
+
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Blogster</a>
+            <a href="#" data-target="sidenavid" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+
+                {{#if user}}
+                    <li>
+                        <a href="/dashboard">Welcome {{user.name}}</a>
+                    </li>
+                    <li>
+                        <a href="/auth/logout">
+                            Logout
+                        </a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a href="/stories">
+                            Public Stories
+                        </a>
+                    </li>
+                {{/if}}
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<ul class="sidenav" id="sidenavid">
+    <li>
+        {{#if user}}
+        {{else}}
+            <a href="/auth/login" class="btn red darken-1">
+                <i class="material-icons white-text">assignment_ind</i>Login
+            </a>
+        {{/if}}
+    </li>
+    <li>
+        <a href="/stories">
+            <i class="material-icons">book</i>Public Stories
+        </a>
+    </li>
+
+    {{#if user}}
+
+        <li class="divider"></li>
+        <li>
+            <a href="/dashboard">
+                <i class="material-icons">dashboard</i>Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="/stories/my">
+                <i class="material-icons">bookmark_border</i>My stories
+            </a>
+        </li>
+        <li>
+            <a href="/auth/logout">
+                <i class="material-icons">assignment_return</i>Logout
+            </a>
+        </li>
+        <li>
+            <a href="/stories/add">
+                <i class="material-icons">assignment_return</i>Add Story
+            </a>
+        </li>
+
+    {{/if}}
+</ul>

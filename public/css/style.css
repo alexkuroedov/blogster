@@ -1,0 +1,69 @@
+body{
+    display:flex;
+    min-height:100vh;
+    flex-direction:column;
+}
+
+main{
+    flex: 1 0 auto;
+}
+
+.mgt-15{
+    margin-top:15px;
+}
+
+.mgb-15{
+    margin-bottom:15px;
+}
+
+.pd-5{
+    padding:5px;
+}
+.pd-10{
+    padding:10px;
+}
+
+.pd-15{
+    padding:15px;
+}
+
+.sidenav li > a.btn > i.material-icons {
+    float: left;
+    /*height: 48px;*/
+    line-height: 48px;
+    margin: 0 0 0 0;
+    width: 24px;
+    font-size:24px;
+    /* color: rgba(0,0,0,0.54); */
+}
+
+#validation{
+    box-sizing: border-box;
+    margin:40px auto;
+    width:60%;
+}
+
+#validation .card-content{
+
+    padding-bottom:0px;
+
+}
+
+.story-text{
+    height:120px;
+}
+
+.dash-status{
+    text-transform: capitalize;
+}
+
+#delete-form{
+    display:inline;
+}
+
+@media (max-width:720px) {
+    #validation{
+        width:100%;
+    }
+
+}

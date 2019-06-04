@@ -1,0 +1,31 @@
+    <div id="validation" class="card card-default center-align">
+        <div class="card-content">
+            <h4 class="card-title">Account Login</h4>
+            <form class="col s12"  method="post" action="/auth/login">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" name="email" class="validate" required>
+                        <label for="email" class="active">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="password" type="password" name="password" class="validate" required>
+                        <label for="password" class="">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn btn-primary right" type="submit" name="action">
+                                Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
