@@ -3,13 +3,62 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Blogster</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <p class="footer-txt grey-text text-lighten-4">
+                    This site uses technology: node.js express, handlebars, mongodb
+                </p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="/stories">Public Stories</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/about">About</a></li>
+                <ul class="footer-ul">
+                    {{#if user}}
+                    <li>
+                        <a href="/dashboard">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/stories/my">
+                            My News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/stories/add">
+                            Add News
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/stories">
+                            Public News
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/auth/logout">
+                            Logout
+                        </a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/stories">
+                            Public News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/auth/login">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/auth/Register">
+                            Register
+                        </a>
+                    </li>
+                    {{/if}}
+
+
+                    {{!-- <li><a class="grey-text text-lighten-3" href="/stories">Public Stories</a></li> --}}
+                    {{!-- <li><a class="grey-text text-lighten-3" href="/about">About</a></li> --}}
                 </ul>
             </div>
         </div>
@@ -17,7 +66,7 @@
     <div class="footer-copyright">
         <div class="container">
             © 2018 Blogster
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            {{!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> --}}
         </div>
     </div>
 </footer>

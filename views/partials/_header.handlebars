@@ -1,4 +1,5 @@
-<nav>
+{{!-- <nav class="brown darken-3"> --}}
+<nav class="teal darken-3">
     <div class="container">
 
         <div class="nav-wrapper">
@@ -7,20 +8,53 @@
             <ul class="right hide-on-med-and-down">
 
                 {{#if user}}
-                    <li>
-                        <a href="/dashboard">Welcome {{user.name}}</a>
-                    </li>
-                    <li>
-                        <a href="/auth/logout">
-                            Logout
-                        </a>
-                    </li>
+                <li>
+                    <a href="/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/stories/my">
+                        My News
+                    </a>
+                </li>
+                <li>
+                    <a href="/stories/add">
+                        Add News
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-a-border-right" href="/stories">
+                        Public News
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="/dashboard">Welcome {{user.name}}</a>
+                </li>
+                <li>
+                    <a href="/auth/logout">
+                        Logout
+                    </a>
+                </li>
                 {{else}}
-                    <li>
-                        <a href="/stories">
-                            Public Stories
-                        </a>
-                    </li>
+                <li>
+                    <a class="nav-a-border-right" href="/stories">
+                        Public News
+                    </a>
+                </li>
+                <li>
+                    <a href="/auth/login">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    <a href="/auth/Register">
+                        Register
+                    </a>
+                </li>
                 {{/if}}
 
 
@@ -33,11 +67,18 @@
     <li>
         {{#if user}}
         {{else}}
-            <a href="/auth/login" class="btn red darken-1">
-                <i class="material-icons white-text">assignment_ind</i>Login
-            </a>
+        <a href="/auth/login" class="btn red darken-1">
+            <i class="material-icons white-text">assignment_ind</i>Login
+        </a>
         {{/if}}
     </li>
+    <li>
+        <a href="/auth/Register">
+            <i class="material-icons">receipt</i>Register
+        </a>
+    </li>
+    <li class="divider"></li>
+
     <li>
         <a href="/stories">
             <i class="material-icons">book</i>Public Stories
@@ -46,27 +87,27 @@
 
     {{#if user}}
 
-        <li class="divider"></li>
-        <li>
-            <a href="/dashboard">
-                <i class="material-icons">dashboard</i>Dashboard
-            </a>
-        </li>
-        <li>
-            <a href="/stories/my">
-                <i class="material-icons">bookmark_border</i>My stories
-            </a>
-        </li>
-        <li>
-            <a href="/auth/logout">
-                <i class="material-icons">assignment_return</i>Logout
-            </a>
-        </li>
-        <li>
-            <a href="/stories/add">
-                <i class="material-icons">assignment_return</i>Add Story
-            </a>
-        </li>
+    <li class="divider"></li>
+    <li>
+        <a href="/auth/logout">
+            <i class="material-icons">assignment_return</i>Logout
+        </a>
+    </li>
+    <li>
+        <a href="/dashboard">
+            <i class="material-icons">dashboard</i>Dashboard
+        </a>
+    </li>
+    <li>
+        <a href="/stories/my">
+            <i class="material-icons">bookmark_border</i>My News
+        </a>
+    </li>
+    <li>
+        <a href="/stories/add">
+            <i class="material-icons">bookmark</i>Add News
+        </a>
+    </li>
 
     {{/if}}
 </ul>

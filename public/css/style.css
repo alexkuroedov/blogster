@@ -8,6 +8,24 @@ main{
     flex: 1 0 auto;
 }
 
+.page-footer{
+    margin-top:40px;
+}
+
+.footer-ul a{
+    line-height: 25px;
+}
+
+.footer-txt{
+    font-size:18px;
+}
+
+.footer-ul a{
+    color:#f5f5f5;
+}
+.nav-a-border-right{
+    border-right:1px solid #1e776c;
+}
 .mgt-15{
     margin-top:15px;
 }
@@ -61,6 +79,15 @@ main{
     display:inline;
 }
 
+@media (min-width: 993px) and (max-width:1100px) {
+    nav .brand-logo{
+        display:none;
+    }
+
+    nav ul.right{
+        float:left!important;
+    }
+}
 @media (max-width:720px) {
     #validation{
         width:100%;
