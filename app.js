@@ -112,11 +112,10 @@ const https = require("https");
 const http = require("http");
 setInterval(function() {
     https.get("https://nameless-meadow-22669.herokuapp.com/", (result) => {
-        // console.log(result)
+        console.log('get https ',result)
     });
 
-    http.get("http://mysterious-lake-60427.herokuapp.com/")
+    http.get("http://mysterious-lake-60427.herokuapp.com/", (result)=> {
+        console.log('get http ', result)
+    })
 }, 300000); // every 5 minutes (300000)
-
-//todo
-// /media/alex/Hugo/DopTutors/Javascript_d_v/1A_NODEJS/[! 2018] Node.js, Express and MongoDB Dev to Deployment [Video] [2018]/AUTOSHOTS_3/11.StoryBooks Prep and Deployment
