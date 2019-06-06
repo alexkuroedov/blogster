@@ -85,7 +85,7 @@ main{
     }
 
     nav ul.right{
-        float:left!important;
+        /* float:left!important; */
     }
 }
 @media (max-width:720px) {
