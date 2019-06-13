@@ -1,0 +1,29 @@
+version: '3'
+ 
+services:
+  react: 
+    # build: .docker/docker-react.dockerfile
+    build: 
+      context: .
+      dockerfile: .docker/docker-react.dockerfile
+    ports:
+    - 3000:3000  
+    volumes:
+      # not override /app/node_modules
+      - /app/node_modules
+      - ./app:/app
+    networks:
+      - cwiki-network
+
+  jsonserver:
+    build:
+      context: .
+      dockerfile: .docker/docker-jsonserver.dockerfile
+    ports:
+    - 3004:3004
+    networks:
+      - cwiki-network
+
+networks:
+  cwiki-network:
+    driver: "bridge"
