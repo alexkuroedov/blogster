@@ -1,2 +1,2 @@
 # docker exec blogster_mongo sh -c 'exec mongodump -d <database_name> --archive' > all-collections.archive
-docker exec blogster_mongo sh -c 'exec mongodump --archive' > backup/blogster-mongo-collections.archive
+docker exec blogster_mongo sh -c 'exec mongodump --archive' > backup/blogster-mongo-collections.bson
