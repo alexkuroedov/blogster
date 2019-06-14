@@ -10,22 +10,23 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const config = require('./config/config')
 
-const { truncate,
-        stripTags,
-        formatDate,
-        select,
-        editIcon} = require('./helpers/hbs')
+const {
+    truncate,
+    stripTags,
+    formatDate,
+    select,
+    editIcon
+} = require('./helpers/hbs')
 
 
 const app = express()
-const port = process.env.PORT || 5000
-
+// const port = process.env.PORT || 5000
 
 mongoose.connect(config.mongoURI, {
-    useNewUrlParser: true
-})
-    .then(() => console.log('MongoDb connected,', config.mongoURI ))
-    .catch(err => console.log('MongoDb connect error',err))
+        useNewUrlParser: true
+    })
+    .then(() => console.log('MongoDb connected,', config.mongoURI))
+    .catch(err => console.log('MongoDb connect error', err))
 
 //load user model
 require('./models/User')
@@ -39,7 +40,7 @@ require('./config/passport')(passport);
 app.engine(
     "handlebars",
     hbars({
-        helpers:{
+        helpers: {
             truncate,
             stripTags,
             formatDate,
@@ -52,7 +53,9 @@ app.engine(
 app.set("view engine", "handlebars");
 
 //body parser middleware (for form create req.body)
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 app.use(methodOverride("_method"));
@@ -101,21 +104,24 @@ app.use('/auth', auth)
 app.use('/stories', stories)
 
 
-app.listen(port, () => {
-    console.log(`Server run on port ${port}`)
+app.listen(config.port, () => {
+    console.log(`Server run on port ${config.port}`)
 })
 
 //============ end routing ===============
 
-//for Heroku not sleep
-const https = require("https");
-const http = require("http");
-setInterval(function() {
-    https.get("https://nameless-meadow-22669.herokuapp.com/", (result) => {
-        console.log('get https ',result)
-    });
+if (config.heroku) {
 
-    http.get("http://mysterious-lake-60427.herokuapp.com/", (result)=> {
-        console.log('get http ', result)
-    })
-}, 300000); // every 5 minutes (300000)
+    //for Heroku not sleep
+    const https = require("https");
+    const http = require("http");
+    setInterval(function () {
+        https.get("https://nameless-meadow-22669.herokuapp.com/", (result) => {
+            console.log('get https ', result)
+        });
+
+        http.get("http://mysterious-lake-60427.herokuapp.com/", (result) => {
+            console.log('get http ', result)
+        })
+    }, 300000); // every 5 minutes (300000)
+}

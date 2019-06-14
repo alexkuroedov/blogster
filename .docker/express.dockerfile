@@ -13,10 +13,11 @@ COPY ./app/package*.json ./
 # Pipenv позволяет устанавливать зависимости в родительскую систему при указании флага --system:
 # RUN set -ex && npm install
 RUN npm install
+RUN npm install -g nodemon
 
 COPY ./app ./
 
-EXPOSE 3000
+EXPOSE 5000
 
 # ENTRYPOINT npm start 
 CMD ["npm","start"]
